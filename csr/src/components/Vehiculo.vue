@@ -1,16 +1,19 @@
 <template>
    <h1> Vehiculos </h1> 
     <FormV />
+    <Tabla />
 </template>
 
 <script>
 import FormV from './FormV.vue'
 import {provide, reactive, ref} from 'vue'
+import Tabla from './Tabla.vue';
 
 export default {
   name: 'Vehiculo',
   components: {
-    FormV
+    FormV,
+    Tabla
   },
   setup(){
     const vehiculos = ref([]);

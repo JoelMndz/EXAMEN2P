@@ -78,7 +78,6 @@ export default {
                         numeroTicket: vehiculo.numeroTicket
                     })
                 })
-                console.log(vehiculo);
                 
                 vehiculo.nombre='',
                 vehiculo.placa='',
