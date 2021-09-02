@@ -75,24 +75,22 @@ export default {
                 const data = await fetch('http://localhost:9000/api/vehiculo/salida',{
                     method:'POST',
                     body: JSON.stringify({
-                        nombre:vehiculo.nombre,
+                        nombre: vehiculo.nombre,
                         placa: vehiculo.placa,
                         espacio: vehiculo.espacio,
                         costo: vehiculo.costo,
                         horas: vehiculo.horas,
-                        nombre: vehiculo.nombre,
-                        estado: vehiculo.estado
+                        estado: vehiculo.estado,
+                        numeroTicket: vehiculo.numeroTicket
                     })
                 })
-                console.log(vehiculo);
-                /*
                 vehiculo.nombre='',
                 vehiculo.placa='',
                 vehiculo.espacio='',
                 vehiculo.numeroTicket='',
                 vehiculo.horas=0,
                 vehiculo.costo=0
-                vehiculo.estado = '';*/
+                vehiculo.estado = '';
                 const e = await data.json();
                 console.log(e);
             } catch (error) {
