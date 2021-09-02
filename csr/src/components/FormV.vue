@@ -48,14 +48,6 @@
         v-model.number="vehiculo.horas"
     >
   </div>
-  <div class="mb-3">
-    <input
-        type="text" 
-        class="form-control"
-        placeholder="Estado"
-        v-model="vehiculo.estado"
-    >
-  </div>
   <button 
     type="submit" 
     class="btn btn-primary"
@@ -74,16 +66,20 @@ export default {
             try {
                 const data = await fetch('http://localhost:9000/api/vehiculo/salida',{
                     method:'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
                     body: JSON.stringify({
                         nombre: vehiculo.nombre,
                         placa: vehiculo.placa,
                         espacio: vehiculo.espacio,
                         costo: vehiculo.costo,
                         horas: vehiculo.horas,
-                        estado: vehiculo.estado,
                         numeroTicket: vehiculo.numeroTicket
                     })
                 })
+                console.log(vehiculo);
+                
                 vehiculo.nombre='',
                 vehiculo.placa='',
                 vehiculo.espacio='',
